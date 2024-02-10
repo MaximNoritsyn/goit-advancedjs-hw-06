@@ -2,9 +2,17 @@
   Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 */
 
-class Component {
-  constructor (public props:T) {
+type T = {
+  title: string;
+}
 
+interface IComponent {
+  props: T;
+}
+
+class Component implements IComponent{
+  constructor (public props:T) {
+    this.props = props;
   }
 }
 
